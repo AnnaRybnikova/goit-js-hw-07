@@ -1,3 +1,9 @@
+const headEl = document.querySelector("head");
+const cssLink = document.createElement("link");
+cssLink.rel = "stylesheet";
+cssLink.href = "./css/task-1.css";
+headEl.append(cssLink);
+
 const categoriesItemsEl = document.querySelectorAll(".item");
 console.log(`Number of categories: ${categoriesItemsEl.length}`);
 
