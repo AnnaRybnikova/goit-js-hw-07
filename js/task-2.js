@@ -1,3 +1,9 @@
+const headEl = document.querySelector("head");
+const cssLink = document.createElement("link");
+cssLink.rel = "stylesheet";
+cssLink.href = "./css/task-2.css";
+headEl.append(cssLink);
+
 const images = [
   {
     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
@@ -29,8 +35,8 @@ const galleryEl = document.querySelector(".gallery");
 
 const imagesMarkup = images
   .map((image) => {
-    return `<li class="gallery-item">
-      <img src="${image.url}" alt="${image.alt}"/>
+    return `<li>
+      <img src="${image.url}" alt="${image.alt}" width="360" height="300"/>
     </li>`
   })
   .join("");
