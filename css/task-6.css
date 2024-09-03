@@ -1,0 +1,41 @@
+#controls,
+#boxes {
+    border-radius: 8px;
+    padding: 32px;
+    background-color: #f6f6fe;
+    margin: 0 auto;
+}
+
+#controls {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+#controls > input {
+    width: 150px;
+}
+
+#controls > button {
+    padding: 8px auto;
+    width: 120px;
+    height: 40px;
+}
+
+button[data-destroy] {
+    background-color: #ff4e4e;
+}
+
+button[data-destroy]:hover {
+    background-color: #ff7070;
+}
+
+#boxes {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 44px;
+    flex-wrap: wrap;
+}

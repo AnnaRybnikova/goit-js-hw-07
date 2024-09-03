@@ -55,6 +55,8 @@ textarea {
 input {
   font-family: inherit;
   outline: transparent;
+
+  background-color: transparent;
   
   border: 1px solid #808080;
   border-radius: 4px;
