@@ -11,7 +11,11 @@ const boxesEl = document.querySelector("#boxes");
 
 createBtnEl.addEventListener("click", event => {
   destroyBoxes()
-  createBoxes(inputEl.value);
+  let inputElValue = inputEl.value;
+  if (inputElValue < 1 || inputElValue > 100) {
+    return;
+  }
+  createBoxes(inputElValue);
   inputEl.value = "";
 })
 
@@ -19,19 +23,20 @@ destroyBtnEl.addEventListener("click", () => destroyBoxes())
 
 function createBoxes(amount) {
   let divSize = 30;
-  if (amount >= 1 && amount <= 100) {
-    for (let i = 1; i <= amount; i++) {
-      const divEl = document.createElement("div");
-      if (i !== 1) {
-        divSize += 10;
-      }
-      divEl.style.height = toPixels(divSize);
-      divEl.style.width = toPixels(divSize);
-      divEl.style.backgroundColor = getRandomHexColor();
-
-      boxesEl.append(divEl);
+  let boxesArray = [];
+  for (let i = 1; i <= amount; i++) {
+    let divEl = document.createElement("div");
+    if (i !== 1) {
+      divSize += 10;
     }
-  };
+    divEl.style.height = toPixels(divSize);
+    divEl.style.width = toPixels(divSize);
+    divEl.style.backgroundColor = getRandomHexColor();
+
+    boxesArray.push(divEl);
+  }
+
+  boxesEl.append(...boxesArray);
 }
 
 function destroyBoxes() {
